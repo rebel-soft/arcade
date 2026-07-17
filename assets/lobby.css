@@ -1,0 +1,100 @@
+/* Rebelsoft Arcade 大廳 — 零框架、系統字型、深淺色自適應 */
+:root {
+  --bg: #f6f4ef;
+  --ink: #1c1a17;
+  --card: #ffffff;
+  --edge: #d9d4ca;
+  --accent: #b3502d;
+  --muted: #6f6a61;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17151a;
+    --ink: #ece8e1;
+    --card: #211e26;
+    --edge: #37333e;
+    --accent: #e2764a;
+    --muted: #9b95a5;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans TC", sans-serif;
+  line-height: 1.6;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.hall-header {
+  padding: 3rem 1.25rem 1.5rem;
+  text-align: center;
+}
+.hall-header h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 6vw, 2.6rem);
+  letter-spacing: .35em;
+  text-indent: .35em; /* 讓字距置中視覺平衡 */
+}
+.hall-header .sub {
+  margin: .5rem 0 0;
+  color: var(--muted);
+}
+.card-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  padding: 1rem 1.25rem 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+.game-card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--edge);
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .12s ease, border-color .12s ease;
+}
+a.game-card:hover, a.game-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+.game-card h2 {
+  margin: 0 0 .3rem;
+  font-size: 1.2rem;
+}
+.game-card .tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: .92rem;
+}
+.status-chip {
+  display: inline-block;
+  margin-bottom: .55rem;
+  padding: .1rem .6rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  border: 1px solid var(--edge);
+  color: var(--muted);
+}
+.status-chip.playable {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.game-card.disabled {
+  opacity: .6;
+}
+.hint { text-align: center; color: var(--muted); }
+.hall-footer {
+  padding: 1rem 1.25rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: .8rem;
+}
