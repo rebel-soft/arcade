@@ -4,7 +4,7 @@
       "id": "echo",
       "title": "迴響 ECHO",
       "path": "games/echo/",
-      "status": "in-dev",
+      "status": "playable",
       "engine": "godot-web",
       "tagline": "回合制符文迴響 deckbuilder — 你打出的牌會在兩回合後重演，8 回合內擊破 Boss 護盾。"
     }
